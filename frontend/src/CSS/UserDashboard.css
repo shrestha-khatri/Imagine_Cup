@@ -1,0 +1,222 @@
+/* UserDashboard.css - Swiggy Dashboard Feature Cards */
+.dashboard-page {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 30%, #334155 60%, #475569 100%);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    position: relative;
+  }
+  
+  .dashboard-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 80%, rgba(252, 128, 25, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+    z-index: -1;
+  }
+  
+  .dashboard-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  .dashboard-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
+    flex-shrink: 0;
+  }
+  
+  .header-content {
+    flex: 1;
+  }
+  
+  .dashboard-title {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 900;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+  
+  .dashboard-subtitle {
+    color: #94a3b8;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  /* Features Grid */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+  }
+  
+  /* Feature Cards */
+  .feature-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 28px;
+    padding: 3rem 2.5rem;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-20px) scale(1.03);
+    box-shadow: 
+      0 60px 140px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
+  
+  .feature-card:hover::before {
+    opacity: 1;
+  }
+  
+  /* Color Variants */
+  .orange-card {
+    border-image: linear-gradient(90deg, #fc8019, #f97316) 1;
+  }
+  
+  .orange-card:hover::before {
+    background: linear-gradient(90deg, #fc8019, #f97316);
+  }
+  
+  .green-card {
+    border-image: linear-gradient(90deg, #10b981, #059669) 1;
+  }
+  
+  .green-card:hover::before {
+    background: linear-gradient(90deg, #10b981, #059669);
+  }
+  
+  .blue-card {
+    border-image: linear-gradient(90deg, #3b82f6, #1d4ed8) 1;
+  }
+  
+  .blue-card:hover::before {
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+  }
+  
+  /* Feature Content */
+  .feature-icon {
+    font-size: 4rem;
+    margin-bottom: 1.75rem;
+    transition: transform 0.4s;
+  }
+  
+  .feature-card:hover .feature-icon {
+    transform: scale(1.2) rotate(10deg);
+  }
+  
+  .feature-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: #f1f5f9;
+    transition: color 0.3s;
+  }
+  
+  .feature-description {
+    color: #cbd5e1;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+  }
+  
+  .feature-arrow {
+    font-size: 2rem;
+    font-weight: 300;
+    opacity: 0.6;
+    transition: all 0.4s;
+  }
+  
+  .feature-card:hover .feature-arrow {
+    opacity: 1;
+    transform: translateX(8px);
+  }
+  
+  /* Responsive */
+  @media (min-width: 768px) {
+    .dashboard-page {
+      padding: 3rem 2rem;
+    }
+    
+    .features-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .dashboard-container {
+      max-width: 1200px;
+    }
+    
+    .dashboard-header {
+      padding: 3rem;
+      margin-bottom: 5rem;
+    }
+  }
+  
+  /* Landscape Mobile */
+  @media (max-width: 768px) and (orientation: landscape) {
+    .dashboard-page {
+      padding: 1.5rem 1rem;
+    }
+    
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  

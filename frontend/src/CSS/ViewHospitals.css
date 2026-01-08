@@ -1,0 +1,252 @@
+/* ViewHospitals.css - Swiggy Hospital Listings - Dynamic Progress Bars */
+.hospitals-page {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 30%, #334155 70%, #475569 100%);
+    min-height: 100vh;
+    color: #f1f5f9;
+    padding: 2rem 1rem;
+  }
+  
+  .hospitals-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Page Header */
+  .page-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+  
+  .page-title {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 900;
+    background: linear-gradient(135deg, #fc8019 0%, #f97316 50%, #ea580c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  
+  .header-stats {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .stat-badge {
+    background: rgba(252, 128, 25, 0.2);
+    color: #fc8019;
+    padding: 0.75rem 1.75rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(252, 128, 25, 0.3);
+  }
+  
+  /* Hospitals Grid */
+  .hospitals-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  /* Hospital Cards */
+  .hospital-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 28px;
+    padding: 2.5rem;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .hospital-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #fc8019, #f97316, #fc8019);
+  }
+  
+  .hospital-card:hover {
+    transform: translateY(-16px);
+    box-shadow: 
+      0 50px 120px rgba(252, 128, 25, 0.3),
+      0 0 0 1px rgba(252, 128, 25, 0.4);
+    border-color: rgba(252, 128, 25, 0.3);
+  }
+  
+  /* Hospital Header */
+  .hospital-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+  
+  .hospital-id-badge {
+    background: rgba(252, 128, 25, 0.2);
+    color: #fc8019;
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 800;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(252, 128, 25, 0.4);
+  }
+  
+  .hospital-icon {
+    font-size: 3rem;
+    opacity: 0.1;
+  }
+  
+  /* Beds Progress */
+  .beds-info {
+    margin-bottom: 2.5rem;
+  }
+  
+  .beds-label {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+  
+  .beds-progress {
+    width: 100%;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+    border-radius: 12px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    min-width: 20%;
+  }
+  
+  .progress-text {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Details Button */
+  .details-button {
+    width: 100%;
+    padding: 1.25rem 2.5rem;
+    font-size: 1.125rem;
+    font-weight: 800;
+    font-family: inherit;
+    background: linear-gradient(135deg, #fc8019 0%, #f97316 50%, #ea580c 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 15px 45px rgba(252, 128, 25, 0.4);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-height: 60px;
+  }
+  
+  .details-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transition: left 0.7s;
+  }
+  
+  .details-button:hover::before {
+    left: 100%;
+  }
+  
+  .details-button:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 70px rgba(252, 128, 25, 0.6);
+  }
+  
+  /* Empty State */
+  .empty-state {
+    text-align: center;
+    padding: 6rem 2rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .empty-icon {
+    font-size: 8rem;
+    margin-bottom: 2rem;
+    opacity: 0.3;
+  }
+  
+  .empty-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #94a3b8;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #94a3b8, #cbd5e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .empty-subtitle {
+    font-size: 1.25rem;
+    color: #64748b;
+    font-weight: 500;
+  }
+  
+  /* Responsive Grid */
+  @media (min-width: 768px) {
+    .hospitals-grid {
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 2.5rem;
+    }
+    
+    .hospitals-page {
+      padding: 3rem 2rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .hospitals-container {
+      padding: 0 2rem;
+    }
+    
+    .page-title {
+      font-size: 3.75rem;
+    }
+  }
+  
+  /* Landscape Mobile */
+  @media (max-width: 768px) and (orientation: landscape) {
+    .hospitals-page {
+      padding: 1.5rem 1rem;
+    }
+  }
+  

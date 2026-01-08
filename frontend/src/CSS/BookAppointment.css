@@ -1,0 +1,243 @@
+/* BookAppointment.css - Swiggy-inspired healthcare appointment dashboard [web:1][web:3][web:13] */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.appointment-dashboard-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8faff 0%, #e8f4fd 100%);
+    font-family: 'Poppins', sans-serif;
+    padding: 2rem 1rem;
+    padding-bottom: 4rem;
+}
+
+.appointment-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Header */
+.appointment-header {
+    background: white;
+    border-radius: 24px;
+    padding: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+
+.dashboard-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, #fc8019, #ff6b35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Sections */
+.beds-section,
+.specialists-section {
+    background: white;
+    border-radius: 24px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #f1f3f4;
+}
+
+/* Beds List */
+.beds-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.bed-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #fff 0%, #f8faff 100%);
+    border-radius: 20px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.bed-item:hover {
+    border-color: #fc8019;
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(252, 128, 25, 0.15);
+}
+
+.bed-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.hospital-badge {
+    background: linear-gradient(135deg, #fc8019, #ff6b35);
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    align-self: flex-start;
+    width: fit-content;
+}
+
+.bed-availability {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #00c851;
+}
+
+/* Specialists List */
+.specialists-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.specialist-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #fff 0%, #f8faff 100%);
+    border-radius: 20px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.specialist-item:hover {
+    border-color: #fc8019;
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(252, 128, 25, 0.15);
+}
+
+.specialist-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.specialist-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.specialist-specialty {
+    color: #fc8019;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.specialist-timing {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Buttons */
+.primary-btn,
+.secondary-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 56px;
+    min-width: 140px;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #fc8019, #ff6b35);
+    color: white;
+    box-shadow: 0 8px 24px rgba(252, 128, 25, 0.3);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(252, 128, 25, 0.4);
+}
+
+.secondary-btn {
+    background: linear-gradient(135deg, #6c757d, #5a6268);
+    color: white;
+    box-shadow: 0 8px 24px rgba(108, 117, 125, 0.3);
+}
+
+.secondary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(108, 117, 125, 0.4);
+}
+
+/* Quick Actions */
+.quick-actions-section {
+    background: white;
+    border-radius: 24px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+
+.actions-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    flex: 1;
+    max-width: 280px;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .appointment-dashboard-page {
+        padding: 3rem 2rem;
+    }
+    
+    .beds-list,
+    .specialists-list {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bed-item,
+    .specialist-item {
+        padding: 2rem 2.5rem;
+    }
+    
+    .actions-grid {
+        flex-wrap: nowrap;
+    }
+}
+
+/* Touch targets ensured */
+button:focus {
+    outline: 3px solid #fc8019;
+    outline-offset: 2px;
+}

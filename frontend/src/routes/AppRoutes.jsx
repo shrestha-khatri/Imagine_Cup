@@ -19,6 +19,10 @@ import MyBedBookings from "../pages/user/MyBedBookings";
 import MyAppointments from "../pages/user/MyAppointments";
 import ViewHospitals from "../pages/user/ViewHospitals";
 import HospitalDetails from "../pages/user/HospitalDetails";
+import ManageBeds from "../pages/hospital/ManageBeds";
+import ManageOPD from "../pages/hospital/ManageOPD";
+import ManageEquipment from "../pages/hospital/ManageEquipment";
+import ManageSpecialists from "../pages/hospital/ManageSpecialists";
 
 export default function AppRoutes() {
   return (
@@ -31,6 +35,10 @@ export default function AppRoutes() {
         <Route path="/hospital/dashboard" element={<HospitalDashboard />} />
         <Route path="/hospital/bed-requests" element={<BedRequests />} />
         <Route path="/hospital/register" element={<HospitalRegister />} />
+        <Route path="/hospital/manage-beds" element={<ManageBeds />} />
+        <Route path="/hospital/manage-opd" element={<ManageOPD />} />
+        <Route path="/hospital/manage-equipment" element={<ManageEquipment />} />
+        <Route path="/hospital/manage-specialists" element={<ManageSpecialists />} />
         <Route
           path="/hospital/appointment-requests"
           element={<AppointmentRequests />}

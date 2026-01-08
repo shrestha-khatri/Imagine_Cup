@@ -1,54 +1,53 @@
 import { useNavigate } from "react-router-dom";
+import '../CSS/Home.css';
 
 export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ padding: 40, maxWidth: 400, margin: "auto" }}>
-      <h1>Smart City Healthcare</h1>
+    <div className="home-page">
+      <div className="home-container">
+        <h1 className="hero-title">Smart City Healthcare</h1>
 
-      {/* Hospital Section */}
-      <div style={{ marginTop: 30 }}>
-        <h3>Hospital</h3>
-
-        <button
-          style={{ width: "100%" }}
-          onClick={() => navigate("/hospital/login")}
-        >
-          Hospital Login
-        </button>
-
-        <p style={{ fontSize: 14, marginTop: 8 }}>
-          New hospital?{" "}
-          <span
-            style={{ color: "blue", cursor: "pointer" }}
-            onClick={() => navigate("/hospital/register")}
+        {/* Hospital Section */}
+        <section className="auth-section hospital-section">
+          <h3 className="section-title">Hospital</h3>
+          <button
+            className="auth-button hospital-button"
+            onClick={() => navigate("/hospital/login")}
           >
-            Register here
-          </span>
-        </p>
-      </div>
+            Hospital Login
+          </button>
+          <p className="register-link">
+            New hospital?{" "}
+            <span
+              className="register-link-text"
+              onClick={() => navigate("/hospital/register")}
+            >
+              Register here →
+            </span>
+          </p>
+        </section>
 
-      {/* User Section */}
-      <div style={{ marginTop: 40 }}>
-        <h3>User</h3>
-
-        <button
-          style={{ width: "100%" }}
-          onClick={() => navigate("/user/login")}
-        >
-          User Login
-        </button>
-
-        <p style={{ fontSize: 14, marginTop: 8 }}>
-          New user?{" "}
-          <span
-            style={{ color: "blue", cursor: "pointer" }}
-            onClick={() => navigate("/user/register")}
+        {/* User Section */}
+        <section className="auth-section user-section">
+          <h3 className="section-title">User</h3>
+          <button
+            className="auth-button user-button"
+            onClick={() => navigate("/user/login")}
           >
-            Register here
-          </span>
-        </p>
+            User Login
+          </button>
+          <p className="register-link">
+            New user?{" "}
+            <span
+              className="register-link-text"
+              onClick={() => navigate("/user/register")}
+            >
+              Register here →
+            </span>
+          </p>
+        </section>
       </div>
     </div>
   );

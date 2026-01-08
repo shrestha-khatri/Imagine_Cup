@@ -1,0 +1,29 @@
+/* ManageSpecialists.css */
+
+.manage-specialists-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+}
+
+.manage-specialists-card {
+  width: 500px;
+  background: rgba(255, 255, 255, 0.075);
+  backdrop-filter: blur(25px);
+  border-radius: 26px;
+  padding: 3rem 2.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+}
+
+.manage-specialists-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  text-align: center;
+  background: linear-gradient(135deg, #fc8019, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+}

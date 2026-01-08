@@ -1,0 +1,27 @@
+/* AppointmentRequests.css - Glassmorphism */
+
+.appointment-requests-page {
+  min-height: 100vh;
+  padding: 4rem 1.5rem;
+  background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+}
+
+.appointment-requests-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.appointment-card {
+  background: rgba(255, 255, 255, 0.075);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  padding: 2rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  transition: transform 0.4s ease;
+}
+
+.appointment-card:hover {
+  transform: translateY(-8px);
+}
